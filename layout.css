@@ -1,0 +1,67 @@
+/* Style général pour les sections d'image et de texte */
+.image-text-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 50vh; /* Chaque section occupe au moins 50% de la hauteur de la vue */
+}
+
+/* Pour la section avec fond blanc */
+.section-white {
+  background-color: #ffffff;
+}
+
+/* Pour la section avec le fond de l'entête (ici un dégradé) */
+.section-header {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+}
+
+/* Style général pour l'image dans la section */
+.image-text-section img {
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Effet de zoom au survol de l'image */
+.image-text-section img:hover {
+  transform: scale(1.05);
+}
+
+/* Style pour le paragraphe associé à l'image */
+.image-text-section .text {
+  width: 50%;
+  margin: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Configuration pour la première section : image à gauche, texte à droite */
+.section-one {
+  /* Par défaut flex-direction: row, donc image à gauche, texte à droite */
+  display: flex;
+  flex-direction: row;
+}
+
+/* Configuration pour la deuxième section : image à droite, texte à gauche */
+.section-two {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .image-text-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .image-text-section img,
+  .image-text-section .text {
+    width: 80%;
+    margin: 1rem auto;
+  }
+}
